@@ -25,6 +25,14 @@ namespace Music
     if(hmusic == 0 && hstream == 0) throw "Failed to load music";
   }
 
+  bool IsPlaying() {
+	  return BASS_ChannelIsActive(isStream ? hstream : hmusic) == BASS_ACTIVE_PLAYING;
+  }
+
+  void Stop() {
+	  BASS_ChannelStop(isStream ? hstream : hmusic);
+  }
+
   void Play()
   {
     if (isStream)

@@ -9,6 +9,12 @@ namespace Music
   //start music playback
   void Play();
 
+  //stop music playback
+  void Stop();
+
+  //returns true if is playing
+  bool IsPlaying();
+
   //get position of music in number of byte.
   //if playbackspeed is 44100Hz in stereo 16bit, that sould mean that 44100*2*2 is one second
   //or something like that
