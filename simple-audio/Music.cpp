@@ -1,6 +1,6 @@
 
 #undef UNICODE
-#include "bass24/bass.h"
+#include "../bass24/bass.h"
 
 namespace Music
 {                         

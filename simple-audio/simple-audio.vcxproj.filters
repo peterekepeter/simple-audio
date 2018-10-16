@@ -15,17 +15,16 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <None Include="ReadMe.txt" />
-    <None Include="bass24\bass.dll" />
+    <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
-    <Library Include="bass24\bass.lib" />
+    <Library Include="..\bass24\bass.lib" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Music.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="bass24\bass.h">
+    <ClInclude Include="..\bass24\bass.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -33,5 +32,8 @@
     <ClCompile Include="Music.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\bass24\bass.dll" />
   </ItemGroup>
 </Project>

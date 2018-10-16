@@ -72,16 +72,24 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <None Include="bass24\bass.dll">
+    <CustomBuild Include="..\bass24\bass.dll">
       <FileType>Document</FileType>
-    </None>
-    <None Include="ReadMe.txt" />
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</DeploymentContent>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</DeploymentContent>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">xcopy "$(SolutionDir)bass24\bass.dll" "$(OutDir)" /Y</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)bass.dll</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)bass24\bass.dll</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">xcopy "$(SolutionDir)bass24\bass.dll" "$(OutDir)" /Y</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(OutDir)bass.dll</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectDir)bass24\bass.dll</AdditionalInputs>
+    </CustomBuild>
+    <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
-    <Library Include="bass24\bass.lib" />
+    <Library Include="..\bass24\bass.lib" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="bass24\bass.h" />
+    <ClInclude Include="..\bass24\bass.h" />
     <ClInclude Include="Music.h" />
   </ItemGroup>
   <ItemGroup>
