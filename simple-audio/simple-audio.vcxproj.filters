@@ -15,17 +15,17 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <None Include="bass24\bass.dll" />
     <None Include="README.md" />
+    <None Include="..\bass24\bass.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Library Include="bass24\bass.lib" />
+    <Library Include="..\bass24\bass.lib" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Music.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="bass24\bass.h">
+    <ClInclude Include="..\bass24\bass.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
