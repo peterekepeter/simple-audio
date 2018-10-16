@@ -75,7 +75,7 @@
     <None Include="bass24\bass.dll">
       <FileType>Document</FileType>
     </None>
-    <None Include="ReadMe.txt" />
+    <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
     <Library Include="bass24\bass.lib" />
