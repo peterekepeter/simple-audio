@@ -34,6 +34,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="..\bass24\bass.dll" />
+    <CopyFileToFolders Include="..\bass24\bass.dll" />
   </ItemGroup>
 </Project>
