@@ -1,6 +1,7 @@
 
 #undef UNICODE
 #include "../bass24/bass.h"
+#include "./Music.h"
 
 namespace Music
 {                         
@@ -8,14 +9,41 @@ namespace Music
   static HSTREAM hstream = 0;
   static bool isStream = false;        
   static BASS_INFO info;
+  static char currentMusicFile[MAX_PATH];
+  bool didInit = false;
+
 
   void Init(const char* musicfile, bool stream)
   {
-    BASS_Init(-1,44100,BASS_DEVICE_LATENCY,0,0); //default init, use default stuff     
+    if (!didInit)
+    {
+      BASS_Init(-1, 44100, BASS_DEVICE_LATENCY, 0, 0); //default init, use default stuff     
+      BASS_GetInfo(&info);
+    }
 
-    BASS_GetInfo(&info);
+    if (strcmp(currentMusicFile, musicfile) == 0)
+    {
+      return;
+    }
+
+    // cleanup
+    if (IsPlaying()) {
+      Stop();
+    }
+
+    if (hmusic) 
+    {
+      BASS_MusicFree(hmusic);
+      hmusic = 0;
+    }
+
+    if (hstream) {
+      BASS_StreamFree(hstream);
+      hstream = 0;
+    }
 
     isStream = stream;
+    strcpy_s(currentMusicFile, musicfile);
   
     if (isStream)
       hstream = BASS_StreamCreateFile(0,musicfile,0,0,0);
