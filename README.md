@@ -1,5 +1,7 @@
 # simple-audio
 
+[![CI](https://github.com/peterekepeter/simple-audio/actions/workflows/main.yml/badge.svg)](https://github.com/peterekepeter/simple-audio/actions/workflows/main.yml)
+
 This project massively simplifies adding audio support to a project. 
 The catch? It uses bass.dll for which you need license for commertial usage.
 
