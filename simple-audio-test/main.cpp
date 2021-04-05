@@ -21,16 +21,28 @@ void user_check(const char* message)
 	}
 }
 
-void tests() {
+void manual_test() {
 	Music::Init("sine-song.it", false);
 	Music::Play();
 	user_check("Can you hear sinesong.it?");
 	Music::Stop();
 }
 
-int main() {
+
+void auto_test() {
+	// check if library can be called
+	Music::Init("");
+}
+
+
+int main(int argc, const char** argv) {
 	try {
-		tests();
+		if (argc == 2 && strcmp(argv[1], "auto") == 0) {
+			auto_test();
+		}
+		else {
+			manual_test();
+		}
 		return 0;
 	}
 	catch (const char* message) {
