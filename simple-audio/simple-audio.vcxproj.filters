@@ -13,12 +13,19 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="x86">
+      <UniqueIdentifier>{c3260b95-de73-4ada-aeb3-4c1858d16ca3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="x64">
+      <UniqueIdentifier>{16730106-52c4-4b52-b4a6-390bd00f9006}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="README.md" />
-  </ItemGroup>
-  <ItemGroup>
-    <Library Include="..\bass24\bass.lib" />
+    <None Include="..\bass24\x64\bass.dll">
+      <Filter>x64</Filter>
+    </None>
+    <None Include="..\bass24\bass.dll" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Music.h">
@@ -34,6 +41,9 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="..\bass24\bass.dll" />
+    <Library Include="..\bass24\bass.lib">
+      <Filter>x86</Filter>
+    </Library>
+    <Library Include="..\bass24\x64\bass.lib" />
   </ItemGroup>
 </Project>

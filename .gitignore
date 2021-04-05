@@ -1,4 +1,3 @@
 .vs/ 
-Debug/ 
-Release/ 
 *.vcxproj.user 
+.build/
