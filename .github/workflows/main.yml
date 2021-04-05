@@ -25,5 +25,4 @@ jobs:
         devenv simple-audio.sln /build "${{matrix.configuration}}|${{matrix.platform}}"
     - name: Test
       run: |
-        cd .build/out-${{matrix.platform}}-${{matrix.configuration}}
-        simple-audio-test.exe auto
+        .build/out-${{matrix.platform}}-${{matrix.configuration}}/simple-audio-test.exe auto
