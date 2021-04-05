@@ -1,49 +1,40 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="Header Files">
+    <Filter Include="Bass">
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
     </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
-    <Filter Include="x86">
-      <UniqueIdentifier>{c3260b95-de73-4ada-aeb3-4c1858d16ca3}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="x64">
+    <Filter Include="Bass\x64">
       <UniqueIdentifier>{16730106-52c4-4b52-b4a6-390bd00f9006}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Bass\x86">
+      <UniqueIdentifier>{c3260b95-de73-4ada-aeb3-4c1858d16ca3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <None Include="README.md" />
     <None Include="..\bass24\x64\bass.dll">
-      <Filter>x64</Filter>
+      <Filter>Bass\x64</Filter>
     </None>
-    <None Include="..\bass24\bass.dll" />
+    <None Include="..\bass24\bass.dll">
+      <Filter>Bass\x86</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Music.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\bass24\bass.h">
-      <Filter>Header Files</Filter>
+      <Filter>Bass</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="Music.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
+    <ClInclude Include="Music.h" />
   </ItemGroup>
   <ItemGroup>
     <Library Include="..\bass24\bass.lib">
-      <Filter>x86</Filter>
+      <Filter>Bass\x86</Filter>
     </Library>
-    <Library Include="..\bass24\x64\bass.lib" />
+    <Library Include="..\bass24\x64\bass.lib">
+      <Filter>Bass\x64</Filter>
+    </Library>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Music.cpp" />
   </ItemGroup>
 </Project>
